@@ -1,0 +1,193 @@
+% Template for a Computer Science Tripos Part II project dissertation
+\documentclass[12pt,a4paper,twoside,openright]{report}
+\usepackage[pdfborder={0 0 0}]{hyperref}    % turns references into hyperlinks
+\usepackage[margin=25mm]{geometry}  % adjusts page layout
+\usepackage{graphicx}  % allows inclusion of PDF, PNG and JPG images
+\usepackage{verbatim}
+\usepackage{docmute}   % only needed to allow inclusion of proposal.tex
+\usepackage{booktabs} %For professional formatting of tables
+\usepackage[numbers]{natbib} %For formatting of references
+\usepackage[toc,page]{appendix}
+\usepackage{pdfpages} %For inserting PDF into latex source file
+
+%For a more accurate word count
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir listings 0 1
+%TC:envir comment 0 0
+
+
+%For inserting index
+\usepackage{makeidx}
+\makeindex
+%\newcommand{\printthesisindex}{%
+%    \cleardoublepage%
+%    \phantomsection%
+%    \addcontentsline{toc}{chapter}{Index}%
+%    \printindex}
+
+%Commands for entering line breaks
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
+\renewcommand\baselinestretch{1.2}
+
+\raggedbottom                           % try to avoid widows and orphans
+\sloppy
+\clubpenalty1000%
+\widowpenalty1000%
+
+%To parameterise: name, college, candidate number, dissertationn title, word count, date, code line count, project originator, project supervisor, print index or not
+
+\begin{document}
+
+%Don't count text outside the main body within the word count
+%tc:ignore
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title
+
+\pagestyle{empty}
+
+\rightline{\LARGE \textbf{first-name surname}}
+
+\vspace*{60mm}
+\begin{center}
+\Huge
+\textbf{dissertation-title} \\[5mm]
+Computer Science Tripos -- Part II \\[5mm]
+college College \\[5mm]
+\today  % today's date
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Proforma, table of contents and list of figures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Proforma
+%%
+%%%%%
+
+\chapter*{Proforma}
+
+
+\textbf{Candidate Number}: XXXXX \\
+\textbf{Project Title}: Diss Title \\
+\textbf{Examination}: Computer Science Tripos -- Part II, May 2024  \\
+\textbf{Word Count}: XXXX \\
+\textbf{Code line count}: \\
+\textbf{Project Originator} (if this is the student please state 'The candidate'):  \\
+\textbf{Project Supervisor}: \\
+
+
+\footnotetext[1]{This word count was computed
+by \texttt{detex diss.tex | tr -cd '0-9A-Za-z $\tt\backslash$n' | wc -w}
+}
+\stepcounter{footnote}
+
+
+\section*{Original Aims of the Project}
+
+Original aims of project...
+
+
+\section*{Work Completed}
+
+All that has been completed appears in this dissertation.
+
+\section*{Special Difficulties}
+
+Learning how to incorporate encapulated post
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Declaration
+%%
+%%%%%
+ 
+\newpage
+\section*{Declaration}
+
+I, XXX of XXX College, being a candidate for Part II of the Computer
+Science Tripos, hereby declare
+that this dissertation and the work described in it are my own work,
+unaided except as may be specified below, and that the dissertation
+does not contain material that has already been used to any substantial
+extent for a comparable purpose.
+
+\bigskip
+\leftline{Signed [signature]}
+
+\medskip
+\leftline{Date [date]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Table of contents
+%%
+%%%%%
+
+\tableofcontents
+
+\listoffigures
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Acknowledgements
+%%
+%%%%%
+\section*{Acknowledgements}
+
+Acknowledgements go here...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% now for the chapters
+
+\pagestyle{headings}
+
+%tc:endignore
+
+\include{Introduction/Introduction}
+
+\include{Introduction/examplefile}
+
+\include{Preparation/Preparation}
+
+\include{Implementation/Implementation}
+
+\include{Evaluation/Evaluation}
+
+\include{Conclusions/Conclusions}
+
+%tc:ignore
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% the bibliography
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% the appendices
+\appendix
+
+\include{Appendices/AppendixA}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Index:
+%%
+%\printthesisindex
+
+\include{ProjectProposal}
+%tc:endignore
+\end{document}
