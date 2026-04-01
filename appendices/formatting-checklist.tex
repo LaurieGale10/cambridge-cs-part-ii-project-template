@@ -1,6 +1,6 @@
 \chapter{Formatting Checklist}
 
-\LaTeX documents can easily be well formatted with a little effort. If you're coming from a `what you see is what you get' word processor, use the following (non-exhaustive) checklist to check you're report is neatly formatted. Finding out how to use these formatting styles is mainly left as an exercise to the reader.
+\LaTeX documents are easy to format well with little effort. If you're coming from a `what you see is what you get' word processor, use the following (non-exhaustive) checklist to check your report is neatly formatted. Finding out how to use these formatting styles is mainly left as an exercise to the reader.
 
 \begin{itemize}
     \item Are your speech marks correctly formatted?  
@@ -9,14 +9,10 @@
         \item Anti-Pattern Example: Some think that computer science is "boring".
     \end{itemize}
 
-    \item Are you using the \texttt{booktabs} package for neater tables?  
-    \begin{itemize}
-        \item For more information on \texttt{booktabs} tables, see \href{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/}{this package page}.
-    \end{itemize}
+    \item Are you using the \href{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/}{\texttt{booktabs}} package for neater tables?  
 
     \item Are you citing correctly?  
     \begin{itemize}
-        \item If you are citing words properly, use their words at their cost.
         \item Example: Kitchen supplies are known to go missing in an office context \citep{CaseOfDisappearingTeaspoons}. However,  \citet{TeaspoonSolutionProposal} has proposed an elegant solution.
         \item Anti-Patterns:
         \begin{itemize}
@@ -26,17 +22,17 @@
     \end{itemize}
 
     \item Are references to programmatic things (e.g., file, class, or variable names) in a monospaced font?
+    \begin{itemize}
+        \item Use \texttt{\textbackslash texttt\{\}} for this
+    \end{itemize}
 
-    \item Are code listings formatted as code listings?
+    \item Are code extracts formatted as code listings (see Appendix \ref{app:latex-primer})?
     
     \item Is the text in your figures readable?  
 
     \item Are all of your paragraphs evenly spaced?  
-    \begin{itemize}
-        \item Anti-Pattern: Uneven number of lines between each paragraph.
-    \end{itemize}
 
-    \item Are you using math mode when referring to mathematical equations/symbols?  
+    \item Are you using math mode when using equations/symbols?  
 
     \item Are your captions for figures appearing below figures and captions for tables appearing above them?
     \begin{itemize}
@@ -45,6 +41,12 @@
             \item Putting captions in wrong place.
             \item Not including captions at all.
         \end{itemize}
+    \end{itemize}
+
+    \item Are your titles, section headings, and captions in sentence case?
+    \begin{itemize}
+        \item Example: \textbf{My new type system for Rust}
+        \item Anti-pattern: \textbf{My New Type System For Rust}
     \end{itemize}
 
     \item Are your footnotes appearing immediately after a word?

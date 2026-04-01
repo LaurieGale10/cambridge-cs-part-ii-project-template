@@ -9,6 +9,7 @@
 \usepackage[numbers]{natbib} %For formatting of references
 \usepackage[toc,page]{appendix}
 \usepackage{pdfpages} %For inserting PDF into latex source file
+\usepackage{listings}
 
 %For a more accurate word count
 %TC:envir table 0 1
@@ -41,7 +42,6 @@
 \clubpenalty1000%
 \widowpenalty1000%
 
-%To parameterise: name, college, candidate number, dissertationn title, word count, date, code line count, project originator, project supervisor, print index or not
 
 \begin{document}
 
@@ -53,16 +53,30 @@
 
 \pagestyle{empty}
 
-\rightline{\LARGE \textbf{first-name surname}}
+\rightline{\LARGE \textbf{blind-grading-number}}
 
 \vspace*{60mm}
 \begin{center}
 \Huge
 \textbf{dissertation-title} \\[5mm]
 Computer Science Tripos -- Part II \\[5mm]
-college College \\[5mm]
 \today  % today's date
 \end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Declaration
+%%
+%%%%%
+ 
+\newpage
+\section*{Declaration}
+
+I, the candidate for Part II of the Computer Science Tripos with Blind Grading Number [insert BGN here], hereby declare that this report and the work described in it are my own work, unaided except as may be specified below, and that the report does not contain material that has already been used to any substantial extent for a comparable purpose. In preparation of this report, I adhered to the Department of Computer Science and Technology AI Policy. [The project required the approved use of [insert name of technology] and such use is acknowledged in the text at the relevant sections.] [I am content for my report to be made available to the students and staff of the University.]
+Date \today
+
+\medskip
+\leftline{Date [date]}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Proforma, table of contents and list of figures
@@ -76,13 +90,15 @@ college College \\[5mm]
 \chapter*{Proforma}
 
 
-\textbf{Candidate Number}: XXXXX \\
-\textbf{Project Title}: Diss Title \\
-\textbf{Examination}: Computer Science Tripos -- Part II, May 2024  \\
-\textbf{Word Count}: XXXX \\
+\textbf{Candidate number}: XXXXX \\
+\textbf{Project title}: XXXX \\
+\textbf{Examination}: Computer Science Tripos -- Part II, May XXXX  \\
+\textbf{Word count}: XXXX \\
 \textbf{Code line count}: \\
-\textbf{Project Originator} (if this is the student please state 'The candidate'):  \\
-\textbf{Project Supervisor}: \\
+\textbf{Project originator} (if this is the student please state `The candidate'):  \\
+\textbf{Day-to-day supervisor}: \\
+\textbf{Marking supervisor}: \\
+\textbf{(Whether approval from the Departmental Ethics Committee was requested, whether it was approved, and the Ethics Committee case number if applicable.)} \\
 
 
 \footnotetext[1]{This word count was computed
@@ -91,53 +107,18 @@ by \texttt{detex diss.tex | tr -cd '0-9A-Za-z $\tt\backslash$n' | wc -w}
 \stepcounter{footnote}
 
 
-\section*{Original Aims of the Project}
+\section*{Original aims of the project}
 
-Original aims of project...
-
-
-\section*{Work Completed}
-
-All that has been completed appears in this dissertation.
-
-\section*{Special Difficulties}
-
-Learning how to incorporate encapulated post
+Maximum 100 words.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% Declaration
-%%
-%%%%%
- 
-\newpage
-\section*{Declaration}
+\section*{Work completed}
 
-I, XXX of XXX College, being a candidate for Part II of the Computer
-Science Tripos, hereby declare
-that this dissertation and the work described in it are my own work,
-unaided except as may be specified below, and that the dissertation
-does not contain material that has already been used to any substantial
-extent for a comparable purpose.
+Maximum 100 words.
 
-\bigskip
-\leftline{Signed [signature]}
+\section*{Special difficulties}
 
-\medskip
-\leftline{Date [date]}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% Table of contents
-%%
-%%%%%
-
-\tableofcontents
-
-\listoffigures
-
-\newpage
+Maximum 100 words.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -148,6 +129,16 @@ extent for a comparable purpose.
 
 Acknowledgements go here...
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Table of contents
+%%
+%%%%%
+
+\tableofcontents
+
+\newpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % now for the chapters
 
@@ -155,15 +146,15 @@ Acknowledgements go here...
 
 %tc:endignore
 
-\include{Introduction/Introduction}
+\include{introduction/introduction}
 
-\include{Preparation/Preparation}
+\include{preparation/preparation}
 
-\include{Implementation/Implementation}
+\include{implementation/implementation}
 
-\include{Evaluation/Evaluation}
+\include{evaluation/evaluation}
 
-\include{Conclusions/Conclusions}
+\include{conclusions/conclusions}
 
 %tc:ignore
 
@@ -179,11 +170,11 @@ Acknowledgements go here...
 % the appendices
 \appendix
 
-\include{Appendices/ProjectProposal}
+\include{appendices/project-proposal}
 
-\include{Appendices/LaTexPrimer}
+\include{appendices/latex-primer}
 
-\include{Appendices/FormattingChecklist}
+\include{appendices/formatting-checklist}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Index:

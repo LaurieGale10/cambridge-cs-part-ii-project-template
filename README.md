@@ -8,4 +8,4 @@ To use this template for your report, either:
 - If using Overleaf, simply fork the repository, rename the project, and import the forked repository into your Overleaf.
 
 ## Contributing
-There's a few small custom commands that I'd like to add (to be added as Issues in due course), but feel free to create a pull request or create your own issues for potential improvements. The template is meant to be minimal rather than comprehensively demonstrate every LaTex command, students can find plenty of help online for this.
+Feel free to create a pull request or create your own issues for potential improvements. The template is meant to be minimal rather than comprehensively demonstrate every LaTex command, students can find plenty of help online for this.
