@@ -9,3 +9,7 @@ To use this template for your report, either:
 
 ## Contributing
 Feel free to create a pull request or create your own issues for potential improvements. The template is meant to be minimal rather than comprehensively demonstrate every LaTex command, students can find plenty of help online for this.
+
+## License
+
+This repository is licensed under the terms of the MIT license (see `LICENSE.md`).
